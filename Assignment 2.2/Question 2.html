@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Average of three inputted numbers</p>
+<p id ="demo"></p>
+
+<script>
+
+var a = prompt("Enter input");
+
+if (isNaN(a)) {
+	document.getElementById("demo").innerHTML = `${a} is a letter`;
+}
+
+else {
+	document.getElementById("demo").innerHTML = `${a} is a number`;
+}
+
+</script>
+
+</body>
+</html>
