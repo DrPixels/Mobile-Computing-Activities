@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Average of three inputted numbers</p>
+<p id ="demo"></p>
+
+<script>
+
+var a = parseFloat(prompt("Enter first number"));
+var b = parseFloat(prompt("Enter second number"));
+var c = parseFloat(prompt("Enter third number"));
+
+var average = (a + b + c)/3;
+
+document.getElementById("demo").innerHTML = `The numbers are: [${a}, ${b}, ${c}] <br/> <b>Average</b>: ${average}`;
+
+</script>
+
+</body>
+</html>
