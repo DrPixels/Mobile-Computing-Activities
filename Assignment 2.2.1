@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Find the largest of three numbers</p>
+<p id ="max"></p>
+
+<script>
+var a = prompt("Enter the first number");
+var b = prompt("Enter the second number");
+var c = prompt("Enter the third number");
+
+var maxNum = Math.max(a, b, c);
+
+document.getElementById("max").innerHTML = `Numbers entered were: (${a}, ${b}, ${c}) <br/> The largest number is: <b>${maxNum}</b>`;
+</script>
+
+</body>
+</html>
