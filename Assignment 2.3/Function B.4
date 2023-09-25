@@ -1,0 +1,36 @@
+<html>
+   <head>  
+   
+   </head>
+   
+   <body>
+      <p>VOWEL COUNTER</p>
+      <p id="input"></p>
+      <p id="demo"></p>
+      
+   <script type = "text/javascript">
+       
+       var inputString = prompt("Enter an input [string only]");
+       
+       function countVowel(input) {
+       		
+            var vowels = 0;
+            
+            for (let i = 0; i < input.length; i++) {
+            	
+                if (input[i] === "a" || input[i] === "e" || input[i] === "i" || input[i] === "o" || input[i] === "u" || input[i] === "A" || input[i] === "B" || input[i] === "C" || input[i] === "D" || input[i] === "e") {
+                	vowels++;
+                }
+                
+            }
+          return vowels;
+       }
+       
+        var vowelCount = countVowel(inputString);
+       
+ 		document.getElementById("demo").innerHTML = `${vowelCount} vowels`;
+        document.getElementById("input").innerHTML = `Input: ${inputString}`;
+    </script>   
+    
+  </body>
+</html>
