@@ -1,0 +1,34 @@
+<html>
+   <head>  
+   
+   </head>
+   
+   <body>
+      <p>REVERSED NUMBER</p>
+      <p id="input"></p>
+      <p id="reversedinput"></p>
+      
+   <script type = "text/javascript">
+       
+       var inputString = prompt("Enter an input");
+            
+       
+       function reverseNum(input) {
+       		var string = (input.toString()).split("").reverse();
+            var reversedText = "";
+             
+            for (let i = 0; i < string.length; i++) {
+            	reversedText += string[i];
+            }
+              
+		return reversedText;
+       }
+       
+       var result = reverseNum(inputString);
+       
+        document.getElementById("input").innerHTML = `Input: ${inputString}`;
+        document.getElementById("reversedinput").innerHTML = `Reversed Input: ${result}`;
+    </script>   
+    
+  </body>
+</html>
