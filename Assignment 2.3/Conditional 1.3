@@ -1,0 +1,52 @@
+<html>
+   <head>  
+   
+   </head>
+   
+   <body>
+      <p>GRADE CHECKER</p>
+      <p id="input"></p>
+      <p id="demo"></p>
+      
+   <script type = "text/javascript">
+        
+        var grade = parseInt(prompt("Enter your grade"));
+        
+		if (grade >= 90 && grade <= 100) {
+        	document.getElementById("demo").innerHTML = "S grade";
+        }
+        
+        else if (grade >= 80 && grade <= 90) {
+        	document.getElementById("demo").innerHTML = "A grade";
+        }
+        
+        else if (grade >= 70 && grade <= 80) {
+        	document.getElementById("demo").innerHTML = "B grade";
+        }
+        
+        else if (grade >= 60 && grade <= 70) {
+        	document.getElementById("demo").innerHTML = "C grade";
+        }
+        
+        else if (grade >= 50 && grade <= 60) {
+        	document.getElementById("demo").innerHTML = "D grade";
+        }
+        
+        else if (grade >= 40 && grade <= 50) {
+        	document.getElementById("demo").innerHTML = "E grade";
+        }
+        
+        else if (grade >= 0 && grade <= 40) {
+        	document.getElementById("demo").innerHTML = "Student has failed";
+        }
+        
+        else {
+            document.getElementById("demo").innerHTML = "Invalid Marks";
+        }
+        
+        document.getElementById("input").innerHTML = `Grade Input: ${grade}`;
+        
+    </script>   
+    
+  </body>
+</html>
