@@ -1,0 +1,43 @@
+<html>
+   <head>  
+   
+   </head>
+   
+   <body>
+      <p>ARITHMETIC OPERATIONS</p>
+      <p id="input"></p>
+      <p id="demo"></p>
+      
+   <script type = "text/javascript">
+        
+        var a = parseInt(prompt("Enter the first number"));
+        var b = parseInt(prompt("Enter the second number"));
+        
+        var operation = prompt("Enter the operation you want to perform: [+ : add] [- : subtract], [* : multiply], [/ : divide]");
+        
+        switch(operation) {
+        	case "+":
+            	document.getElementById("demo").innerHTML = a + b;
+                break;
+                
+            case "-":
+            	document.getElementById("demo").innerHTML = a - b;
+                break;
+                
+            case "*":
+            	document.getElementById("demo").innerHTML = a * b;
+                break;
+                
+            case "/":
+            	document.getElementById("demo").innerHTML = a / b;
+        		break;
+                
+            default: document.getElementById("demo").innerHTML = "Invalid Operation";
+        }
+        
+        document.getElementById("input").innerHTML = `The inputs are: ${a}, ${b} <br/>Operation: [ ${operation} ]`;
+        
+    </script>   
+    
+  </body>
+</html>
