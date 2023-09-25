@@ -1,0 +1,40 @@
+<html>
+   <head>  
+   
+   </head>
+   
+   <body>
+      <p>PALINDROME CHECKER</p>
+      <p id="input"></p>
+      <p id="reversedinput"></p>
+      <p id="demo"></p>
+      
+   <script type = "text/javascript">
+       
+       var inputString = prompt("Enter an input");
+       var reversedText = "";
+            
+       
+       function isPalindrome(input) {
+       		var string = input.split("").reverse();	
+             
+            for (let i = 0; i < string.length; i++) {
+            	reversedText += string[i];
+            }
+            
+            if (input === reversedText) {
+            	return true;
+            }
+            
+            return false; 
+       }
+       
+       var result = isPalindrome(inputString);
+       
+ 		document.getElementById("demo").innerHTML = result;
+        document.getElementById("input").innerHTML = `Input: ${inputString}`;
+        document.getElementById("reversedinput").innerHTML = `Reversed Input: ${reversedText}`;
+    </script>   
+    
+  </body>
+</html>
