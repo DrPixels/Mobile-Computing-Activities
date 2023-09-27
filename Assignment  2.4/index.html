@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <aside></aside>
+
+      <form>
+        <div class="reg-title-div">
+          <p class="reg-title">REGISTRATION</p>
+        </div>
+
+        <div class="main-subdiv">
+          <div class="upper-section-div">
+            <p>Account Log In Details</p>
+            <div class="name-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-user fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    required
+                    type="text"
+                    placeholder="Enter First Name"
+                  />
+                </div>
+              </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-user fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    required
+                    type="text"
+                    placeholder="Enter Last Name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="username-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-key fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="text"
+                    required
+                    placeholder="Enter Username"
+                  />
+                </div>
+              </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-face-smile fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter Nickname (optional)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="email-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-envelope fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="email"
+                    required
+                    placeholder="Enter Email Address"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="password-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-lock fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input password"
+                    type="password"
+                    minlength="8"
+                    placeholder="Enter Password"
+                  />
+                </div>
+              </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-check-to-slot fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input confirm-password"
+                    type="password"
+                    minlength="8"
+                    required
+                    placeholder="Confirm Password"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="password-status"></p>
+
+          <div class="lower-section-div">
+            <p>Personal Details</p>
+            <div class="gender-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-venus-mars fa-lg"></i>
+                </div>
+
+                <div>
+                  <select required class="gender-option">
+                    <option disabled selected value="">
+                      Please choose your gender
+                    </option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Others</option>
+                    <option>Preferred not to say</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="address-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-house fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    required
+                    type="text"
+                    placeholder="Enter Address"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-phone fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="text"
+                    required
+                    pattern="\d{4}-\d{3}-\d{4}"
+                    placeholder="Phone Number (0912-345-6789)"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="term-condi">
+          <div>
+            <input required type="checkbox" />
+          </div>
+          <div>
+            <p>
+              Creating your account and you accepting
+              <u><b>Terms and Conditions.</b></u>
+            </p>
+          </div>
+        </div>
+
+        <div class="create-div">
+          <button type="submit" class="create-button">Create Account</button>
+        </div>
+
+        <div class="separator">
+          <span>or</span>
+        </div>
+
+        <div class="signup-div">
+          <button type="button" class="signup-button">
+            <div>
+              <i class="fa-brands fa-facebook fa-lg"></i>
+            </div>
+
+            <div>
+              <a href="https://www.facebook.com">Sign up using Facebook!</a>
+            </div>
+          </button>
+
+          <button type="button" class="signup-button">
+            <div>
+              <i class="fa-brands fa-twitter fa-lg"></i>
+            </div>
+
+            <div>
+              <a href="https://www.twitter.com">Sign up using Twitter!</a>
+            </div>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ea3bfd0f41.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

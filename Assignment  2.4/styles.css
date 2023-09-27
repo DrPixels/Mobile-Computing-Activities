@@ -1,0 +1,200 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 1200px;
+  border: solid 1px;
+  margin: 0 auto;
+
+  background-color: white;
+  border-radius: 20px;
+
+  box-shadow: 5px 5px 10px #5c5c5c, -5px -5px 10px #ffffff;
+}
+
+.reg-title-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+}
+
+.reg-title {
+  padding: 1em 5em;
+  border-radius: 20px;
+  background-color: #2934ad;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+  letter-spacing: 0.1em;
+}
+
+aside {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(16, 16, 167, 1) 0%,
+    rgba(41, 52, 173, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+form {
+  padding: 3em;
+}
+
+.main-subdiv {
+  display: flex;
+  flex-direction: column;
+
+  padding: 2em;
+}
+
+.upper-section-div,
+.lower-section-div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5em;
+  padding-left: 1em;
+  margin-bottom: 0.3em;
+}
+
+.email-add-div,
+.password-div,
+.username-div,
+.gender-birth-div,
+.name-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3em;
+  margin-bottom: 20px;
+}
+
+.create-div {
+  margin-top: 0.5em;
+
+  padding: 0 3em;
+}
+
+.signup-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 1em;
+  column-gap: 3em;
+}
+
+.create-div button {
+  width: 100%;
+}
+
+.input-div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  column-gap: 1em;
+  border-bottom: solid 1px;
+  border-color: gray;
+  padding-bottom: 0.5em;
+}
+
+.input-div div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+}
+
+.input,
+.gender-option {
+  background-color: transparent;
+  border: none;
+}
+
+.input:focus,
+.gender-option:focus {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.gender-option,
+.input {
+  width: 100%;
+}
+
+.create-button {
+  padding: 1em 1.5em;
+
+  border: none;
+  border-radius: 5px;
+
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(16, 16, 167, 1) 0%,
+    rgba(41, 52, 173, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.signup-div button:nth-child(1) {
+  background-color: #5890ff;
+}
+
+.signup-div button:nth-child(2) {
+  background-color: #00acee;
+}
+
+.signup-button {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  padding: 1em 1.5em;
+
+  border: none;
+  border-radius: 5px;
+
+  color: white;
+  cursor: pointer;
+}
+
+#label {
+  margin-bottom: 10px;
+}
+
+.separator {
+  text-align: center;
+  margin: 20px 0; /* Adjust the margin as needed */
+}
+
+.separator span {
+  display: inline-block;
+  padding: 0 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.password-status {
+  color: red;
+}
+
+.term-condi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  column-gap: 10px;
+}
