@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .main-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        width: 1200px;
+        border: solid 1px;
+        margin: 0 auto;
+
+        background-color: white;
+        border-radius: 20px;
+
+        box-shadow: 5px 5px 10px #5c5c5c, -5px -5px 10px #ffffff;
+      }
+
+      .reg-title-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+      }
+
+      .reg-title {
+        padding: 1em 5em;
+        border-radius: 20px;
+        background-color: #2934ad;
+        -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.75);
+        letter-spacing: 0.1em;
+      }
+
+      aside {
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(16, 16, 167, 1) 0%,
+          rgba(41, 52, 173, 1) 0%,
+          rgba(0, 212, 255, 1) 100%
+        );
+
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+
+      form {
+        padding: 3em;
+      }
+
+      .main-subdiv {
+        display: flex;
+        flex-direction: column;
+
+        padding: 2em;
+      }
+
+      .upper-section-div,
+      .lower-section-div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5em;
+        padding-left: 1em;
+        margin-bottom: 0.3em;
+      }
+
+      .email-add-div,
+      .password-div,
+      .username-div,
+      .gender-birth-div,
+      .name-div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3em;
+        margin-bottom: 20px;
+      }
+
+      .create-div {
+        margin-top: 0.5em;
+
+        padding: 0 3em;
+      }
+
+      .signup-div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 1em;
+        column-gap: 3em;
+      }
+
+      .create-div button {
+        width: 100%;
+      }
+
+      .input-div {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        align-items: center;
+        column-gap: 1em;
+        border-bottom: solid 1px;
+        border-color: gray;
+        padding-bottom: 0.5em;
+      }
+
+      .input-div div:nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5em;
+      }
+
+      .input,
+      .gender-option {
+        background-color: transparent;
+        border: none;
+      }
+
+      .input:focus,
+      .gender-option:focus {
+        background-color: transparent;
+        border: none;
+        outline: none;
+      }
+
+      .gender-option,
+      .input {
+        width: 100%;
+      }
+
+      .create-button {
+        padding: 1em 1.5em;
+
+        border: none;
+        border-radius: 5px;
+
+        color: white;
+        cursor: pointer;
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(16, 16, 167, 1) 0%,
+          rgba(41, 52, 173, 1) 0%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+
+      .signup-div button:nth-child(1) {
+        background-color: #5890ff;
+      }
+
+      .signup-div button:nth-child(2) {
+        background-color: #00acee;
+      }
+
+      .signup-button {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        padding: 1em 1.5em;
+
+        border: none;
+        border-radius: 5px;
+
+        color: white;
+        cursor: pointer;
+      }
+
+      #label {
+        margin-bottom: 10px;
+      }
+
+      .separator {
+        text-align: center;
+        margin: 20px 0; /* Adjust the margin as needed */
+      }
+
+      .separator span {
+        display: inline-block;
+        padding: 0 10px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .password-status {
+        color: red;
+      }
+
+      .term-condi {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        column-gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <aside></aside>
+
+      <form>
+        <div class="reg-title-div">
+          <p class="reg-title">REGISTRATION</p>
+        </div>
+
+        <div class="main-subdiv">
+          <div class="upper-section-div">
+            <p>Account Log In Details</p>
+            <div class="name-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-user fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    required
+                    type="text"
+                    placeholder="Enter First Name"
+                  />
+                </div>
+              </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-user fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    required
+                    type="text"
+                    placeholder="Enter Last Name"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="username-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-key fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="text"
+                    required
+                    placeholder="Enter Username"
+                  />
+                </div>
+              </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-face-smile fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter Nickname (optional)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="email-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-envelope fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="email"
+                    required
+                    placeholder="Enter Email Address"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="password-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-lock fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input password"
+                    type="password"
+                    minlength="8"
+                    placeholder="Enter Password"
+                  />
+                </div>
+              </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-check-to-slot fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input confirm-password"
+                    type="password"
+                    minlength="8"
+                    required
+                    placeholder="Confirm Password"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="password-status"></p>
+
+          <div class="lower-section-div">
+            <p>Personal Details</p>
+            <div class="gender-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-venus-mars fa-lg"></i>
+                </div>
+
+                <div>
+                  <select required class="gender-option">
+                    <option disabled selected value="">
+                      Please choose your gender
+                    </option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Others</option>
+                    <option>Preferred not to say</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="address-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-house fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    required
+                    type="text"
+                    placeholder="Enter Address"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-div">
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-phone fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="text"
+                    required
+                    pattern="\d{4}-\d{3}-\d{4}"
+                    placeholder="Phone Number (0912-345-6789)"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="term-condi">
+          <div>
+            <input required type="checkbox" />
+          </div>
+          <div>
+            <p>
+              Creating your account and you accepting
+              <u><b>Terms and Conditions.</b></u>
+            </p>
+          </div>
+        </div>
+
+        <div class="create-div">
+          <button type="submit" class="create-button">Create Account</button>
+        </div>
+
+        <div class="separator">
+          <span>or</span>
+        </div>
+
+        <div class="signup-div">
+          <button type="button" class="signup-button">
+            <div>
+              <i class="fa-brands fa-facebook fa-lg"></i>
+            </div>
+
+            <div>
+              <a href="https://www.facebook.com">Sign up using Facebook!</a>
+            </div>
+          </button>
+
+          <button type="button" class="signup-button">
+            <div>
+              <i class="fa-brands fa-twitter fa-lg"></i>
+            </div>
+
+            <div>
+              <a href="https://www.twitter.com">Sign up using Twitter!</a>
+            </div>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const createbutton = document.querySelector(".create-button");
+
+      let status;
+
+      createbutton.addEventListener("click", () => {
+        //For Password
+        const password = document.querySelector(".password").value;
+        const passwordStatus = document.querySelector(".password-status");
+        const confirmpassword =
+          document.querySelector(".confirm-password").value;
+        console.log(password);
+        if (
+          password != confirmpassword &&
+          password.length >= 8 &&
+          confirmpassword.length >= 8
+        ) {
+          clearInterval(status);
+          passwordStatus.innerHTML = `<i class="fa-solid fa-triangle-exclamation fa-lg"></i> Password are not the same. Please try again.`;
+          status = setTimeout(() => {
+            passwordStatus.innerHTML = "";
+          }, 2000);
+        }
+      });
+    </script>
+    <script
+      src="https://kit.fontawesome.com/ea3bfd0f41.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
