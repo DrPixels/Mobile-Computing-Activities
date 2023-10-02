@@ -16,3 +16,11 @@ createbutton.addEventListener("click", () => {
     }, 2000);
   }
 });
+
+// // For Age
+// let age;
+// function computeAge () {
+//     const ageValue = document.querySelector(".input-age");
+// }
+
+
