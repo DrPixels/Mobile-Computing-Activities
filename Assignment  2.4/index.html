@@ -6,149 +6,148 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login-styles.css" />
   </head>
-  <body>
-    <div class="main-container">
-      <aside></aside>
 
+  <body>
+    <div class="main-container hide">
       <form>
         <div class="reg-title-div">
-          <p class="reg-title">REGISTRATION</p>
+          <p class="reg-title">ACCOUNT REGISTRATION FORM</p>
         </div>
 
         <div class="main-subdiv">
-
-            <div class="reset-btn-container">
-                <button type="reset">RESET INPUT<R/button>
-            </div>
+          <div class="reset-btn-container">
+            <button type="reset">Reset All Input</button>
+          </div>
           <div class="upper-section-div">
-            <p>Account Log In Details</p>
-            <div class="name-div">
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-user fa-lg"></i>
+            <p><b>ACCOUNT LOG IN DETAILS</b></p>
+            <div class="upper-section-subdiv">
+              <div class="name-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-user fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="First Name"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    class="input"
-                    required
-                    type="text"
-                    placeholder="Enter First Name"
-                  />
-                </div>
-              </div>
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-user fa-lg"></i>
+                  </div>
 
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-user fa-lg"></i>
-                </div>
-
-                <div>
-                  <input
-                    class="input"
-                    required
-                    type="text"
-                    placeholder="Enter Last Name"
-                  />
-                </div>
-              </div>
-
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-user fa-lg"></i>
+                  <div>
+                    <input
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Last Name"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    class="input"
-                    required
-                    type="text"
-                    placeholder="Enter Middle Initial"
-                  />
-                </div>
-              </div>
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-user fa-lg"></i>
+                  </div>
 
-              
-            </div>
-
-            <div class="username-div">
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-key fa-lg"></i>
-                </div>
-
-                <div>
-                  <input
-                    class="input"
-                    type="text"
-                    required
-                    placeholder="Enter Username"
-                  />
+                  <div>
+                    <input
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Middle Initial"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-face-smile fa-lg"></i>
+              <div class="username-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-key fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input"
+                      type="text"
+                      required
+                      placeholder="Username"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    class="input"
-                    type="text"
-                    placeholder="Enter Nickname (optional)"
-                  />
-                </div>
-              </div>
-            </div>
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-face-smile fa-lg"></i>
+                  </div>
 
-            <div class="email-div">
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-envelope fa-lg"></i>
-                </div>
-
-                <div>
-                  <input
-                    class="input"
-                    type="email"
-                    required
-                    placeholder="Enter Email Address"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="password-div">
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-lock fa-lg"></i>
-                </div>
-
-                <div>
-                  <input
-                    class="input password"
-                    type="password"
-                    minlength="8"
-                    placeholder="Enter Password"
-                  />
+                  <div>
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Nickname (optional)"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-check-to-slot fa-lg"></i>
+              <div class="email-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-envelope fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input"
+                      type="email"
+                      required
+                      placeholder="Email Address"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="password-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-lock fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input password"
+                      type="password"
+                      minlength="8"
+                      placeholder="Password"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    class="input confirm-password"
-                    type="password"
-                    minlength="8"
-                    required
-                    placeholder="Confirm Password"
-                  />
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-check-to-slot fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input confirm-password"
+                      type="password"
+                      minlength="8"
+                      required
+                      placeholder="Confirm Password"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,20 +156,21 @@
           <p class="password-status"></p>
 
           <div class="lower-section-div">
-            <p>Personal Details</p>
+            <p><b>PERSONAL DETAILS</b></p>
 
-            <div class="birthdate-div">
+            <div class="lower-section-subdiv">
+              <div class="birthdate-div">
                 <div class="input-div">
                   <div>
                     <i class="fa-solid fa-cake-candles fa-lg"></i>
                   </div>
-  
+
                   <div>
                     <input
                       class="input"
                       required
                       type="text"
-                      placeholder="Enter Birthdate (mm/dd/year)"
+                      placeholder="Birthdate (mm/dd/year)"
                       pattern="\d{2}/\d{2}/\d{4}"
                       min="2005-01-01"
                     />
@@ -178,62 +178,71 @@
                 </div>
 
                 <div class="input-div">
-                    <div>
-                     Age
-                    </div>
+                  <div>Age</div>
 
-                    <div>
-                      <input
-                        class="input input-age"
-                        disabled
-                      />
-                    </div>
+                  <div>
+                    <input class="input input-age" disabled />
                   </div>
+                </div>
 
                 <div class="input-div">
-                    <div>
-                      <i class="fa-solid fa-house fa-lg"></i>
-                    </div>
-    
-                    <div>
-                      <input
-                        class="input"
-                        required
-                        type="text"
-                        placeholder="Enter Birthplace"
- 
-                      />
-                    </div>
+                  <div>
+                    <i class="fa-solid fa-house fa-lg"></i>
                   </div>
 
-              </div>
-
-            <div class="gender-div">
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-venus-mars fa-lg"></i>
-                </div>
-
-                <div>
-                  <select required class="gender-option">
-                    <option disabled selected value="">
-                      Please choose your gender
-                    </option>
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Others</option>
-
-                  </select>
+                  <div>
+                    <input
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Enter Birthplace"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="civil-div">
+              <div class="address-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-house fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Enter Address"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="gender-div">
                 <div class="input-div">
                   <div>
                     <i class="fa-solid fa-venus-mars fa-lg"></i>
                   </div>
-  
+
+                  <div>
+                    <select required class="gender-option">
+                      <option disabled selected value="">
+                        Please choose your gender
+                      </option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Others</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="civil-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-users-line fa-lg"></i>
+                  </div>
+
                   <div>
                     <select required class="gender-option">
                       <option disabled selected value="">
@@ -247,53 +256,174 @@
                 </div>
               </div>
 
-            <div class="address-div">
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-house fa-lg"></i>
+              <div class="phone-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-phone fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input"
+                      type="text"
+                      required
+                      pattern="\d{4}-\d{3}-\d{4}"
+                      placeholder="Phone Number (XXXX-XXX-XXXX)"
+                    />
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    class="input"
-                    required
-                    type="text"
-                    placeholder="Enter Address"
-                  />
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-tty fa-lg"></i>
+                  </div>
+
+                  <div>
+                    <input
+                      class="input"
+                      type="text"
+                      required
+                      pattern="8\d{3}-\d{4}"
+                      placeholder="Landline (8XXX-XXXX)"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
+              <br />
 
-            <div class="phone-div">
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-phone fa-lg"></i>
+              <p id="parent-par"><b>PARENTS DETAILS</b></p>
+
+              <div class="parent-main-container">
+                <p><b>FATHER</b></p>
+                <div class="name-div">
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </div>
+
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </div>
+
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </div>
+
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Middle Initial"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    class="input"
-                    type="text"
-                    required
-                    pattern="\d{4}-\d{3}-\d{4}"
-                    placeholder="Phone Number (XXXX-XXX-XXXX)"
-                  />
-                </div>
-              </div>
+                <div class="occupation-div">
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user-tie fa-lg"></i>
+                    </div>
 
-              <div class="input-div">
-                <div>
-                  <i class="fa-solid fa-phone fa-lg"></i>
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Occupation"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <input
-                    class="input"
-                    type="text"
-                    required
-                    pattern="8\d{3}-\d{4}"
-                    placeholder="Landline (8XXX-XXXX)"
-                  />
+                <br />
+
+                <p><b>MOTHER</b></p>
+                <div class="name-div">
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </div>
+
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </div>
+
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </div>
+
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Middle Initial"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="occupation-div">
+                  <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-user-tie fa-lg"></i>
+                    </div>
+
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Occupation"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -330,16 +460,59 @@
               <a href="https://www.facebook.com">Sign up using Facebook!</a>
             </div>
           </button>
+        </div>
+      </form>
+    </div>
 
-          <button type="button" class="signup-button">
+    <!--HTML Code for the Login Form-->
+    <div class="login-main-container">
+      <div class="title-login-div">
+        <h1>Login</h1>
+      </div>
+
+      <form class="login-form">
+        <div class="login-email-div">
+          <div class="input-div">
             <div>
-              <i class="fa-brands fa-twitter fa-lg"></i>
+              <i class="fa-solid fa-envelope fa-lg"></i>
             </div>
 
             <div>
-              <a href="https://www.twitter.com">Sign up using Twitter!</a>
+              <input
+                class="input"
+                required
+                type="text"
+                placeholder="Email Address/Username"
+              />
             </div>
-          </button>
+          </div>
+        </div>
+
+        <div class="login-pass-div">
+          <div class="input-div">
+            <div>
+              <i class="fa-solid fa-lock fa-lg"></i>
+            </div>
+
+            <div>
+              <input
+                class="input"
+                required
+                type="text"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="login-forgot-div"><p>Forgot Password/Username?</p></div>
+
+        <div class="login-button-div">
+          <button>Log In</button>
+        </div>
+
+        <div class="login-notmember-div">
+          <p>Not a member? <span id="signupnow">Signup now</span></p>
         </div>
       </form>
     </div>
