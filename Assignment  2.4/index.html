@@ -17,6 +17,10 @@
         </div>
 
         <div class="main-subdiv">
+
+            <div class="reset-btn-container">
+                <button type="reset">RESET INPUT<R/button>
+            </div>
           <div class="upper-section-div">
             <p>Account Log In Details</p>
             <div class="name-div">
@@ -49,6 +53,23 @@
                   />
                 </div>
               </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-user fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    required
+                    type="text"
+                    placeholder="Enter Middle Initial"
+                  />
+                </div>
+              </div>
+
+              
             </div>
 
             <div class="username-div">
@@ -137,6 +158,56 @@
 
           <div class="lower-section-div">
             <p>Personal Details</p>
+
+            <div class="birthdate-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-cake-candles fa-lg"></i>
+                  </div>
+  
+                  <div>
+                    <input
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Enter Birthdate (mm/dd/year)"
+                      pattern="\d{2}/\d{2}/\d{4}"
+                      min="2005-01-01"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                    <div>
+                     Age
+                    </div>
+
+                    <div>
+                      <input
+                        class="input input-age"
+                        disabled
+                      />
+                    </div>
+                  </div>
+
+                <div class="input-div">
+                    <div>
+                      <i class="fa-solid fa-house fa-lg"></i>
+                    </div>
+    
+                    <div>
+                      <input
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Enter Birthplace"
+ 
+                      />
+                    </div>
+                  </div>
+
+              </div>
+
             <div class="gender-div">
               <div class="input-div">
                 <div>
@@ -151,11 +222,30 @@
                     <option>Male</option>
                     <option>Female</option>
                     <option>Others</option>
-                    <option>Preferred not to say</option>
+
                   </select>
                 </div>
               </div>
             </div>
+
+            <div class="civil-div">
+                <div class="input-div">
+                  <div>
+                    <i class="fa-solid fa-venus-mars fa-lg"></i>
+                  </div>
+  
+                  <div>
+                    <select required class="gender-option">
+                      <option disabled selected value="">
+                        Please choose your civil status
+                      </option>
+                      <option>Single</option>
+                      <option>Married</option>
+                      <option>Widowed</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
 
             <div class="address-div">
               <div class="input-div">
@@ -186,7 +276,23 @@
                     type="text"
                     required
                     pattern="\d{4}-\d{3}-\d{4}"
-                    placeholder="Phone Number (0912-345-6789)"
+                    placeholder="Phone Number (XXXX-XXX-XXXX)"
+                  />
+                </div>
+              </div>
+
+              <div class="input-div">
+                <div>
+                  <i class="fa-solid fa-phone fa-lg"></i>
+                </div>
+
+                <div>
+                  <input
+                    class="input"
+                    type="text"
+                    required
+                    pattern="8\d{3}-\d{4}"
+                    placeholder="Landline (8XXX-XXXX)"
                   />
                 </div>
               </div>
