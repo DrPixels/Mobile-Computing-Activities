@@ -7,18 +7,27 @@
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="login-styles.css" />
+    <link rel="stylesheet" href="view-summary.css" />
   </head>
 
   <body>
+    <!--HTML Code for the Signup Form-->
     <div class="main-container hide">
       <form>
         <div class="reg-title-div">
-          <p class="reg-title">ACCOUNT REGISTRATION FORM</p>
+          <h2 class="reg-title">ACCOUNT REGISTRATION FORM</h2>
         </div>
 
         <div class="main-subdiv">
-          <div class="reset-btn-container">
-            <button type="reset">Reset All Input</button>
+          <div class="reset-view-btn-container">
+            <div>
+              <button onclick="viewSummary()" class="view-button" type="button">
+                View Summary of Information
+              </button>
+            </div>
+            <div>
+              <button class="reset-button" type="reset">Reset All Input</button>
+            </div>
           </div>
           <div class="upper-section-div">
             <p><b>ACCOUNT LOG IN DETAILS</b></p>
@@ -26,11 +35,14 @@
               <div class="name-div">
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-user fa-lg"></i>
+                    <label for="first-name-input">
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </label>
                   </div>
 
                   <div>
                     <input
+                      id="first-name-input"
                       class="input"
                       required
                       type="text"
@@ -41,11 +53,14 @@
 
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-user fa-lg"></i>
+                    <label for="last-name-input">
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </label>
                   </div>
 
                   <div>
                     <input
+                      id="last-name-input"
                       class="input"
                       required
                       type="text"
@@ -56,11 +71,14 @@
 
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-user fa-lg"></i>
+                    <label for="middle-intial-input"
+                      ><i class="fa-solid fa-user fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
+                      id="middle-intial-input"
                       class="input"
                       required
                       type="text"
@@ -73,11 +91,14 @@
               <div class="username-div">
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-key fa-lg"></i>
+                    <label for="username-input"
+                      ><i class="fa-solid fa-key fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
+                      id="username-input"
                       class="input"
                       type="text"
                       required
@@ -88,11 +109,14 @@
 
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-face-smile fa-lg"></i>
+                    <label for="nickname-input"
+                      ><i class="fa-solid fa-face-smile fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
+                      id="nickname-input"
                       class="input"
                       type="text"
                       placeholder="Nickname (optional)"
@@ -104,11 +128,14 @@
               <div class="email-div">
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-envelope fa-lg"></i>
+                    <label for="emailaddress-input"
+                      ><i class="fa-solid fa-envelope fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
+                      id="emailaddress-input"
                       class="input"
                       type="email"
                       required
@@ -121,13 +148,17 @@
               <div class="password-div">
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-lock fa-lg"></i>
+                    <label for="password-input"
+                      ><i class="fa-solid fa-lock fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
+                      id="password-input"
                       class="input password"
                       type="password"
+                      required
                       minlength="8"
                       placeholder="Password"
                     />
@@ -136,14 +167,16 @@
 
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-check-to-slot fa-lg"></i>
+                    <label for="confirmpass-input"
+                      ><i class="fa-solid fa-check-to-slot fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
+                      id="confirmpass-input"
                       class="input confirm-password"
                       type="password"
-                      minlength="8"
                       required
                       placeholder="Confirm Password"
                     />
@@ -153,45 +186,43 @@
             </div>
           </div>
 
-          <p class="password-status"></p>
-
           <div class="lower-section-div">
             <p><b>PERSONAL DETAILS</b></p>
 
             <div class="lower-section-subdiv">
               <div class="birthdate-div">
-                <div class="input-div">
-                  <div>
-                    <i class="fa-solid fa-cake-candles fa-lg"></i>
-                  </div>
+                <div class="birthdate-input-div">
+                  <div><p id="birthdate-title">Birthdate</p></div>
 
                   <div>
                     <input
                       class="input"
+                      id="birthdate-input"
                       required
-                      type="text"
-                      placeholder="Birthdate (mm/dd/year)"
-                      pattern="\d{2}/\d{2}/\d{4}"
-                      min="2005-01-01"
+                      type="date"
+                      onchange="calculateAge()"
                     />
                   </div>
                 </div>
 
                 <div class="input-div">
-                  <div>Age</div>
+                  <div><p id="birthdate-title">Age</p></div>
 
                   <div>
-                    <input class="input input-age" disabled />
+                    <input disabled class="input input-age" />
                   </div>
                 </div>
 
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-house fa-lg"></i>
+                    <label for="birthplace-input"
+                      ><i class="fa-solid fa-cake-candles fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
+                      id="birthplace-input"
                       class="input"
                       required
                       type="text"
@@ -201,57 +232,50 @@
                 </div>
               </div>
 
-              <div class="address-div">
-                <div class="input-div">
-                  <div>
-                    <i class="fa-solid fa-house fa-lg"></i>
-                  </div>
+              <div class="gender-civil-div">
+                <div class="gender-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="gender-input"
+                        ><i class="fa-solid fa-venus-mars fa-lg"></i
+                      ></label>
+                    </div>
 
-                  <div>
-                    <input
-                      class="input"
-                      required
-                      type="text"
-                      placeholder="Enter Address"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="gender-div">
-                <div class="input-div">
-                  <div>
-                    <i class="fa-solid fa-venus-mars fa-lg"></i>
-                  </div>
-
-                  <div>
-                    <select required class="gender-option">
-                      <option disabled selected value="">
-                        Please choose your gender
-                      </option>
-                      <option>Male</option>
-                      <option>Female</option>
-                      <option>Others</option>
-                    </select>
+                    <div>
+                      <select id="gender-input" required class="gender-option">
+                        <option disabled selected value="">
+                          Please choose your gender
+                        </option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Others</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="civil-div">
-                <div class="input-div">
-                  <div>
-                    <i class="fa-solid fa-users-line fa-lg"></i>
-                  </div>
+                <div class="civil-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="civilstatus-input"
+                        ><i class="fa-solid fa-users-line fa-lg"></i
+                      ></label>
+                    </div>
 
-                  <div>
-                    <select required class="gender-option">
-                      <option disabled selected value="">
-                        Please choose your civil status
-                      </option>
-                      <option>Single</option>
-                      <option>Married</option>
-                      <option>Widowed</option>
-                    </select>
+                    <div>
+                      <select
+                        id="civilstatus-input"
+                        required
+                        class="gender-option"
+                      >
+                        <option disabled selected value="">
+                          Please choose your civil status
+                        </option>
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Widowed</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -259,32 +283,56 @@
               <div class="phone-div">
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-phone fa-lg"></i>
+                    <label for="phonenumber-input"
+                      ><i class="fa-solid fa-phone fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
-                      class="input"
+                      id="phonenumber-input"
+                      class="input phonenumber-input"
                       type="text"
-                      required
-                      pattern="\d{4}-\d{3}-\d{4}"
-                      placeholder="Phone Number (XXXX-XXX-XXXX)"
+                      pattern="639\d{2}-\d{3}-\d{4}"
+                      placeholder="Phone Number (639XX-XXX-XXXX)"
                     />
                   </div>
                 </div>
 
                 <div class="input-div">
                   <div>
-                    <i class="fa-solid fa-tty fa-lg"></i>
+                    <label for="landline-input"
+                      ><i class="fa-solid fa-tty fa-lg"></i
+                    ></label>
                   </div>
 
                   <div>
                     <input
-                      class="input"
+                      id="landline-input"
+                      class="input telephone-input"
                       type="text"
-                      required
                       pattern="8\d{3}-\d{4}"
                       placeholder="Landline (8XXX-XXXX)"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="address-div">
+                <div class="input-div">
+                  <div>
+                    <label for="address-input"
+                      ><i class="fa-solid fa-house fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="address-input"
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Enter Address"
                     />
                   </div>
                 </div>
@@ -298,11 +346,14 @@
                 <div class="name-div">
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user fa-lg"></i>
+                      <label for="Ffirst-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
                     </div>
 
                     <div>
                       <input
+                        id="Ffirst-name-input"
                         class="input"
                         required
                         type="text"
@@ -313,11 +364,14 @@
 
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user fa-lg"></i>
+                      <label for="Flast-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
                     </div>
 
                     <div>
                       <input
+                        id="Flast-name-input"
                         class="input"
                         required
                         type="text"
@@ -328,11 +382,14 @@
 
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user fa-lg"></i>
+                      <label for="Fmiddle-intial-input">
+                        <i class="fa-solid fa-user fa-lg"></i>
+                      </label>
                     </div>
 
                     <div>
                       <input
+                        id="Fmiddle-intial-input"
                         class="input"
                         required
                         type="text"
@@ -345,11 +402,14 @@
                 <div class="occupation-div">
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user-tie fa-lg"></i>
+                      <label for="Foccupation"
+                        ><i class="fa-solid fa-user-tie fa-lg"></i
+                      ></label>
                     </div>
 
                     <div>
                       <input
+                        id="Foccupation"
                         class="input"
                         required
                         type="text"
@@ -365,11 +425,14 @@
                 <div class="name-div">
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user fa-lg"></i>
+                      <label for="Mfirst-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
                     </div>
 
                     <div>
                       <input
+                        id="Mfirst-name-input"
                         class="input"
                         required
                         type="text"
@@ -380,11 +443,14 @@
 
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user fa-lg"></i>
+                      <label for="Mlast-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
                     </div>
 
                     <div>
                       <input
+                        id="Mlast-name-input"
                         class="input"
                         required
                         type="text"
@@ -395,11 +461,14 @@
 
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user fa-lg"></i>
+                      <label for="Mmiddle-intial-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
                     </div>
 
                     <div>
                       <input
+                        id="Mmiddle-intial-input"
                         class="input"
                         required
                         type="text"
@@ -412,11 +481,14 @@
                 <div class="occupation-div">
                   <div class="input-div">
                     <div>
-                      <i class="fa-solid fa-user-tie fa-lg"></i>
+                      <label for="Moccupation"
+                        ><i class="fa-solid fa-user-tie fa-lg"></i
+                      ></label>
                     </div>
 
                     <div>
                       <input
+                        id="Moccupation"
                         class="input"
                         required
                         type="text"
@@ -436,29 +508,34 @@
           </div>
           <div>
             <p>
-              Creating your account and you accepting
-              <u><b>Terms and Conditions.</b></u>
+              By creating your account, you confirm your acceptance of the
+              <u><b>Terms and Conditions.</b></u
+              >.
             </p>
           </div>
         </div>
 
         <div class="create-div">
-          <button type="submit" class="create-button">Create Account</button>
+          <button onclick="createAccount()" type="submit" class="create-button">
+            <div>
+              <i class="fa-solid fa-user-plus fa-lg"></i>
+            </div>
+
+            <div>Create your account</div>
+          </button>
         </div>
 
         <div class="separator">
           <span>or</span>
         </div>
 
-        <div class="signup-div">
-          <button type="button" class="signup-button">
+        <div class="signup-login-div">
+          <button onclick="logIn()" type="button" class="signup-login-button">
             <div>
-              <i class="fa-brands fa-facebook fa-lg"></i>
+              <i class="fa-solid fa-right-to-bracket fa-lg"></i>
             </div>
 
-            <div>
-              <a href="https://www.facebook.com">Sign up using Facebook!</a>
-            </div>
+            <div>Login using your email/username instead</div>
           </button>
         </div>
       </form>
@@ -474,11 +551,14 @@
         <div class="login-email-div">
           <div class="input-div">
             <div>
-              <i class="fa-solid fa-envelope fa-lg"></i>
+              <label for="email-user-login">
+                <i class="fa-solid fa-envelope fa-lg"></i>
+              </label>
             </div>
 
             <div>
               <input
+                id="email-user-login"
                 class="input"
                 required
                 type="text"
@@ -491,11 +571,14 @@
         <div class="login-pass-div">
           <div class="input-div">
             <div>
-              <i class="fa-solid fa-lock fa-lg"></i>
+              <label for="pass-login">
+                <i class="fa-solid fa-lock fa-lg"></i>
+              </label>
             </div>
 
             <div>
               <input
+                id="pass-login"
                 class="input"
                 required
                 type="text"
@@ -512,9 +595,22 @@
         </div>
 
         <div class="login-notmember-div">
-          <p>Not a member? <span id="signupnow">Signup now</span></p>
+          <p>
+            Not a member?
+            <span onclick="signUp()" id="signupnow">Signup now</span>
+          </p>
         </div>
       </form>
+    </div>
+
+    <div class="view-summary-maincontainer hide">
+      <div onclick="exitSummary()" class="exit-button">
+        <i class="fa-solid fa-circle-xmark fa-xl"></i>
+      </div>
+
+      <div class="information-summary">
+        <p class="information-summary-p"></p>
+      </div>
     </div>
 
     <script src="script.js"></script>
