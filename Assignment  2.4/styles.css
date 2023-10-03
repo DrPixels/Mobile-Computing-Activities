@@ -11,27 +11,45 @@
   background-color: white;
   border-radius: 20px;
 
-  box-shadow: 5px 5px 10px #5c5c5c, -5px -5px 10px #ffffff;
+  box-shadow: -15px 15px 2px #e3e3e3, 15px -15px 2px #ffffff;
 }
 
-.reset-btn-container {
+.reset-view-btn-container {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
 }
 
-.reset-btn-container button {
+.view-button {
   background-color: transparent;
   border: solid 1px;
-  border-color: red;
+  border-color: #5bc0de;
   border-radius: 5px;
   padding: 0.75em 1.5em;
-  transition: all 0.3s;
+  transition: all 0.15s;
   cursor: pointer;
 }
 
-.reset-btn-container button:hover {
-  background-color: red;
+.reset-button {
+  background-color: #d9534f;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 0.75em 1.5em;
+  transition: all 0.15s;
+  cursor: pointer;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: rgb(235, 70, 64);
+}
+
+.reset-button:active {
+  background-color: #9c5f5f;
+}
+
+.view-button:hover {
+  background-color: #5bc0de;
   border-color: white;
   color: white;
 }
@@ -50,7 +68,6 @@
 }
 
 .reg-title {
-  letter-spacing: 0.1em;
   margin-block-start: 0;
   margin-block-end: 0em;
   font-weight: bold;
@@ -58,7 +75,7 @@
 
 .upper-section-subdiv,
 .lower-section-subdiv {
-  padding-left: 1em;
+  padding: 0 1em;
 }
 
 .parent-main-container {
@@ -72,15 +89,15 @@ aside {
   border-bottom-left-radius: 20px;
 }
 
-.signup-form {
-  padding: 3em;
+form {
+  padding: 0 0 3em 0;
 }
 
 .main-subdiv {
   display: flex;
   flex-direction: column;
 
-  padding: 2em;
+  padding: 3em 3em 1em 3em;
 }
 
 .upper-section-div,
@@ -95,35 +112,42 @@ aside {
 .password-div,
 .username-div,
 .phone-div,
+.gender-civil-div,
 .occupation-div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 3em;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .name-div {
   display: grid;
   grid-template-columns: 1.5fr 1.5fr 1fr;
   column-gap: 2em;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .email-div {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .birthdate-div {
   display: grid;
   grid-template-columns: 1fr 0.5fr 1.5fr;
   column-gap: 1.5em;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-.address-div,
-.gender-div,
-.civil-div {
-  margin-bottom: 20px;
+#birthdate-title {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  font-size: 0.9rem;
+  padding-left: 0.5em;
+  margin-right: 2em;
+}
+
+.address-div {
+  margin-bottom: 30px;
 }
 
 #parent-par {
@@ -132,17 +156,31 @@ aside {
 
 .create-div {
   margin: 0.5em auto 0 auto;
-  width: 50%;
+  width: 40%;
   padding: 0 3em;
 }
 
-.signup-div {
+.create-div button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.signup-login-div {
   display: grid;
   grid-template-columns: 1fr;
   padding: 0 1em;
-  column-gap: 3em;
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
+}
+
+.signup-login-div button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+  border-radius: 20px;
 }
 
 .create-div button {
@@ -157,6 +195,21 @@ aside {
   border-bottom: solid 1px;
   border-color: gray;
   padding-bottom: 0.5em;
+}
+
+.birthdate-input-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px;
+  border-color: gray;
+  padding: 0.5em 1em 0.5em 0.5em;
+}
+
+.input-age {
+  font-size: 1.1rem;
+  color: black;
 }
 
 .input-div div:nth-child(1) {
@@ -184,6 +237,13 @@ aside {
   width: 100%;
 }
 
+#birthdate-input {
+  border: solid 1px;
+  padding: 0.3em;
+  border-radius: 5px;
+  border-color: gray;
+}
+
 .create-button {
   padding: 1em 1.5em;
 
@@ -201,15 +261,11 @@ aside {
   );
 }
 
-.signup-div button:nth-child(1) {
-  background-color: #5890ff;
+.signup-login-div button {
+  background-color: #3f2b96;
 }
 
-.signup-div button:nth-child(2) {
-  background-color: #00acee;
-}
-
-.signup-button {
+.signup-login-button {
   display: grid;
   grid-template-columns: 20px 1fr;
   padding: 1em 1.5em;
@@ -232,7 +288,7 @@ aside {
 
 .separator span {
   display: inline-block;
-  padding: 0 10px;
+  padding: 0px 30px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
@@ -252,6 +308,10 @@ a {
   justify-content: center;
   flex-direction: row;
   column-gap: 10px;
+}
+
+.term-condi p {
+  font-size: 0.9rem;
 }
 
 .show {
