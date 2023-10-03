@@ -1,61 +1,130 @@
 const createbutton = document.querySelector(".create-button");
 
+//bday
+let age;
+let birthDateInput;
+
 // For Birthdate Min and Max
 
-let birthDateInput = document.getElementById("bdate");
+const ageDisplay = document.querySelector(".input-age");
 
-// For Current Date
-// let dateObj = new Date();
-// let month = dateObj.getUTCMonth() + 1;
-// let date = dateObj.getUTCDate();
-// let year = dateObj.getUTCFullYear();
+function calculateAge() {
+  birthDateInput = document.getElementById("birthdate-input").value;
+  let bDay = +new Date(birthDateInput);
 
-// //For User's Birthdate
-// let dateObj = new Date();
-// let month = dateObj.getUTCMonth() + 1;
-// let date = dateObj.getUTCDate();
-// let year = dateObj.getUTCFullYear();
+  age = Math.floor((Date.now() - bDay) / 31556952000);
+  if (age < 0) {
+    age = 0;
+    ageDisplay.value = 0;
+    return;
+  }
 
-// let newdate = year + "-" + month + "-" + date.toString().padStart(2, "0");
-// console.log(newdate);
-// birthDateInput.max = newdate.toString();
+  ageDisplay.value = age;
+}
 
 // For Password Checking
 let status;
 
-createbutton.addEventListener("click", () => {
-  console.log(birthDate.value);
-  //For Password
-  const password = document.querySelector(".password").value;
-  const passwordStatus = document.querySelector(".password-status");
-  const confirmpassword = document.querySelector(".confirm-password").value;
-  console.log(password);
-  if (password != confirmpassword) {
-    clearInterval(status);
-    passwordStatus.innerHTML = `<i class="fa-solid fa-triangle-exclamation fa-lg"></i> Password are not the same. Please try again.`;
-    status = setTimeout(() => {
-      passwordStatus.innerHTML = "";
-    }, 2000);
-  }
-});
+function createAccount() {
+  const password = document.querySelector(".password");
+  const confirmpassword = document.querySelector(".confirm-password");
 
-// // For Age
-// let age;
-// function computeAge () {
-//     const ageValue = document.querySelector(".input-age");
-// }
+  //For Telephone
+  const phonenumber = document.querySelector(".phonenumber-input");
+  const telephone = document.querySelector(".telephone-input");
+
+  if (
+    password.value !== confirmpassword.value &&
+    password.value !== "" &&
+    confirmpassword.value !== ""
+  ) {
+    confirmpassword.setCustomValidity(
+      "Passwords are not the same. Please check and try again."
+    );
+    return;
+  } else {
+    confirmpassword.setCustomValidity("");
+  }
+
+  if (age < 18) {
+    ageDisplay.setCustomValidity("Age must be 18 years old or above.");
+    return;
+  } else {
+    ageDisplay.setCustomValidity("");
+  }
+
+  if (phonenumber.value == "" && telephone.value == "") {
+    phonenumber.setCustomValidity("Enter at least one contact number.");
+    telephone.setCustomValidity("Enter at least one contact number.");
+    return;
+  } else {
+    phonenumber.setCustomValidity("");
+    telephone.setCustomValidity("");
+  }
+}
 
 //For the Login and Signup Popup
 const loginForm = document.querySelector(".login-main-container");
 const signupForm = document.querySelector(".main-container");
+const viewSummaryContainer = document.querySelector(
+  ".view-summary-maincontainer"
+);
 
-const signupnowButton = document.querySelector("#signupnow");
-signupnowButton.addEventListener("click", () => {
+function signUp() {
   loginForm.classList.add("hide");
   signupForm.classList.remove("hide");
-});
+  viewSummaryContainer.classList.add("hide");
+}
 
-// function logIn() {
-//   loginForm.classList.add("open-popup");
-//   signupForm.classList.remove("open-popup");
-// }
+function logIn() {
+  loginForm.classList.remove("hide");
+  signupForm.classList.add("hide");
+  viewSummaryContainer.classList.add("hide");
+}
+
+//For View Summary
+function viewSummary() {
+  // Document Query Selector of Each Input in Registration Form
+  const firstName = document.querySelector("#first-name-input").value;
+  const lastName = document.querySelector("#last-name-input").value;
+  const middleInitial = document.querySelector("#middle-intial-input").value;
+  const username = document.querySelector("#username-input").value;
+  const nickname = document.querySelector("#nickname-input").value;
+  const emailAddress = document.querySelector("#emailaddress-input").value;
+
+  const birthplace = document.querySelector("#birthplace-input").value;
+  const gender = document.querySelector("#gender-input").value;
+  const civilStatus = document.querySelector("#civilstatus-input").value;
+  const phonenumber = document.querySelector("#phonenumber-input").value;
+  const landline = document.querySelector("#landline-input").value;
+  const address = document.querySelector("#address-input").value;
+
+  const FfirstName = document.querySelector("#Ffirst-name-input").value;
+  const FlastName = document.querySelector("#Flast-name-input").value;
+  const FmiddleInitial = document.querySelector("#Fmiddle-intial-input").value;
+  const Foccupation = document.querySelector("#Foccupation").value;
+
+  const MfirstName = document.querySelector("#Mfirst-name-input").value;
+  const MlastName = document.querySelector("#Mlast-name-input").value;
+  const MmiddleInitial = document.querySelector("#Mmiddle-intial-input").value;
+  const Moccupation = document.querySelector("#Moccupation").value;
+
+  loginForm.classList.add("hide");
+  signupForm.classList.add("hide");
+  viewSummaryContainer.classList.remove("hide");
+
+  const informationSummaryPar = document.querySelector(
+    ".information-summary-p"
+  );
+  informationSummaryPar.innerHTML = `--- <b>ACCOUNT LOG IN DETAILS</b> --- <br/> <b>Full Name</b>: ${firstName} ${middleInitial}. ${lastName} <br/> <b>Username:</b> ${username} <br/> <b>Nickname:</b> ${nickname} <br/> <b>Email Address:</b> ${emailAddress} <br/> <br/> --- <b>PERSONAL DETAILS</b> --- <br/> <b>Birthdate:</b> ${
+    birthDateInput || ""
+  } <br/> <b>Age:</b> ${
+    age || "unknown"
+  } years old <br/> <b>Birthplace:</b> ${birthplace} <br/> <b>Gender:</b> ${gender} <br/> <b>Civil Status:</b> ${civilStatus} <br/> <b>Phone Number:</b> ${phonenumber} <br/> <b>Landline:</b> ${landline} <br/> <b>Address:</b> ${address} <br/> <br/> --- <b>PARENTS DETAILS</b> --- <br/> <b>Father's Full Name:</b> ${FfirstName} ${FmiddleInitial}. ${FlastName} <br/> <b>Father's Occupation:</b> ${Foccupation} <br/><br/> <b>Mother's Full Name:</b> ${MfirstName} ${MmiddleInitial}. ${MlastName} <br/> <b>Mother's Occupation:</b> ${Moccupation}`;
+}
+
+function exitSummary() {
+  loginForm.classList.add("hide");
+  signupForm.classList.remove("hide");
+  viewSummaryContainer.classList.add("hide");
+}
