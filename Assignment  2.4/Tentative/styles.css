@@ -73,6 +73,18 @@
   font-weight: bold;
 }
 
+.signupform-mainsections-title {
+  background-color: rgba(195, 202, 216, 0.3);
+  border-radius: 5px;
+  margin-top: 1em;
+}
+
+.signupform-mainsections-title p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 1em 0 1em 1em;
+}
+
 .upper-section-subdiv,
 .lower-section-subdiv {
   padding: 0 1em;
@@ -319,18 +331,14 @@ a {
 .term-condi {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   flex-direction: row;
   column-gap: 10px;
+  margin-left: 10em;
 }
 
 .term-condi p {
   font-size: 0.9rem;
-}
-
-.show {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
 }
 
 .hide {
