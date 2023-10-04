@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login-styles.css" />
+    <link rel="stylesheet" href="view-summary.css" />
+    <link rel="stylesheet" href="create-acc.css" />
+  </head>
+
+  <body>
+    <!--HTML Code for the Signup Form-->
+    <div class="main-container hide">
+      <form>
+        <div class="reg-title-div">
+          <h2 class="reg-title">ACCOUNT REGISTRATION FORM</h2>
+        </div>
+
+        <div class="main-subdiv">
+          <div class="reset-view-btn-container">
+            <div>
+              <button onclick="viewSummary()" class="view-button" type="button">
+                View Summary of Information
+              </button>
+            </div>
+            <div>
+              <button class="reset-button" type="reset">Reset All Input</button>
+            </div>
+          </div>
+          <div class="upper-section-div">
+            <p><b>ACCOUNT LOG IN DETAILS</b></p>
+            <div class="upper-section-subdiv">
+              <div class="name-div">
+                <div class="input-div">
+                  <div>
+                    <label for="first-name-input">
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="first-name-input"
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="First Name"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                  <div>
+                    <label for="last-name-input">
+                      <i class="fa-solid fa-user fa-lg"></i>
+                    </label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="last-name-input"
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                  <div>
+                    <label for="middle-intial-input"
+                      ><i class="fa-solid fa-user fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="middle-intial-input"
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Middle Initial"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="username-div">
+                <div class="input-div">
+                  <div>
+                    <label for="username-input"
+                      ><i class="fa-solid fa-key fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="username-input"
+                      class="input"
+                      type="text"
+                      required
+                      placeholder="Username"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                  <div>
+                    <label for="nickname-input"
+                      ><i class="fa-solid fa-face-smile fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="nickname-input"
+                      class="input"
+                      type="text"
+                      placeholder="Nickname (optional)"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="email-div">
+                <div class="input-div">
+                  <div>
+                    <label for="emailaddress-input"
+                      ><i class="fa-solid fa-envelope fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="emailaddress-input"
+                      class="input"
+                      type="email"
+                      required
+                      placeholder="Email Address"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="password-div">
+                <div class="input-div">
+                  <div>
+                    <label for="password-input"
+                      ><i class="fa-solid fa-lock fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="password-input"
+                      class="input password"
+                      type="password"
+                      required
+                      minlength="8"
+                      placeholder="Password"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                  <div>
+                    <label for="confirmpass-input"
+                      ><i class="fa-solid fa-check-to-slot fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="confirmpass-input"
+                      class="input confirm-password"
+                      type="password"
+                      required
+                      placeholder="Confirm Password"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lower-section-div">
+            <p><b>PERSONAL DETAILS</b></p>
+
+            <div class="lower-section-subdiv">
+              <div class="birthdate-div">
+                <div class="birthdate-input-div">
+                  <div><p id="birthdate-title">Birthdate</p></div>
+
+                  <div>
+                    <input
+                      class="input"
+                      id="birthdate-input"
+                      required
+                      type="date"
+                      onchange="calculateAge()"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                  <div><p id="birthdate-title">Age</p></div>
+
+                  <div>
+                    <input readonly class="input input-age" />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                  <div>
+                    <label for="birthplace-input"
+                      ><i class="fa-solid fa-cake-candles fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="birthplace-input"
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Enter Birthplace"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="age-error-div hide">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p class="age-error">Age must be 18 years old or above.</p>
+              </div>
+
+              <div class="gender-civil-div">
+                <div class="gender-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="gender-input"
+                        ><i class="fa-solid fa-venus-mars fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <select id="gender-input" required class="gender-option">
+                        <option disabled selected value="">
+                          Please choose your gender
+                        </option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Others</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="civil-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="civilstatus-input"
+                        ><i class="fa-solid fa-users-line fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <select
+                        id="civilstatus-input"
+                        required
+                        class="gender-option"
+                      >
+                        <option disabled selected value="">
+                          Please choose your civil status
+                        </option>
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Widowed</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="phone-div">
+                <div class="input-div">
+                  <div>
+                    <label for="phonenumber-input"
+                      ><i class="fa-solid fa-phone fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="phonenumber-input"
+                      class="input phonenumber-input"
+                      type="text"
+                      pattern="639\d{2}-\d{3}-\d{4}"
+                      placeholder="Phone Number (639XX-XXX-XXXX)"
+                    />
+                  </div>
+                </div>
+
+                <div class="input-div">
+                  <div>
+                    <label for="landline-input"
+                      ><i class="fa-solid fa-tty fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="landline-input"
+                      class="input telephone-input"
+                      type="text"
+                      pattern="8\d{3}-\d{4}"
+                      placeholder="Landline (8XXX-XXXX)"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="address-div">
+                <div class="input-div">
+                  <div>
+                    <label for="address-input"
+                      ><i class="fa-solid fa-house fa-lg"></i
+                    ></label>
+                  </div>
+
+                  <div>
+                    <input
+                      id="address-input"
+                      class="input"
+                      required
+                      type="text"
+                      placeholder="Enter Address"
+                    />
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <p id="parent-par"><b>PARENTS DETAILS</b></p>
+
+              <div class="parent-main-container">
+                <p><b>FATHER</b></p>
+                <div class="name-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="Ffirst-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Ffirst-name-input"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <label for="Flast-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Flast-name-input"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <label for="Fmiddle-intial-input">
+                        <i class="fa-solid fa-user fa-lg"></i>
+                      </label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Fmiddle-intial-input"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Middle Initial"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="occupation-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="Foccupation"
+                        ><i class="fa-solid fa-user-tie fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Foccupation"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Occupation"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <br />
+
+                <p><b>MOTHER</b></p>
+                <div class="name-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="Mfirst-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Mfirst-name-input"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="First Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <label for="Mlast-name-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Mlast-name-input"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Last Name"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="input-div">
+                    <div>
+                      <label for="Mmiddle-intial-input"
+                        ><i class="fa-solid fa-user fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Mmiddle-intial-input"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Middle Initial"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="occupation-div">
+                  <div class="input-div">
+                    <div>
+                      <label for="Moccupation"
+                        ><i class="fa-solid fa-user-tie fa-lg"></i
+                      ></label>
+                    </div>
+
+                    <div>
+                      <input
+                        id="Moccupation"
+                        class="input"
+                        required
+                        type="text"
+                        placeholder="Occupation"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="term-condi">
+          <div>
+            <input required type="checkbox" />
+          </div>
+          <div>
+            <p>
+              By creating your account, you confirm your acceptance of the
+              <u><b>Terms and Conditions.</b></u
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="create-div">
+          <button onclick="createAccount()" type="submit" class="create-button">
+            <div>
+              <i class="fa-solid fa-user-plus fa-lg"></i>
+            </div>
+
+            <div>Create your account</div>
+          </button>
+        </div>
+
+        <div class="separator">
+          <span>or</span>
+        </div>
+
+        <div class="signup-login-div">
+          <button onclick="logIn()" type="button" class="signup-login-button">
+            <div>
+              <i class="fa-solid fa-right-to-bracket fa-lg"></i>
+            </div>
+
+            <div>Login using your email/username instead</div>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!--HTML Code for the Login Form-->
+    <div class="login-main-container">
+      <div class="title-login-div">
+        <h1>Login</h1>
+      </div>
+
+      <form class="login-form">
+        <div class="login-email-div">
+          <div class="input-div">
+            <div>
+              <label for="email-user-login">
+                <i class="fa-solid fa-envelope fa-lg"></i>
+              </label>
+            </div>
+
+            <div>
+              <input
+                id="email-user-login"
+                class="input"
+                required
+                type="text"
+                placeholder="Email Address/Username"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="login-pass-div">
+          <div class="input-div">
+            <div>
+              <label for="pass-login">
+                <i class="fa-solid fa-lock fa-lg"></i>
+              </label>
+            </div>
+
+            <div>
+              <input
+                id="pass-login"
+                class="input"
+                required
+                type="text"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="login-forgot-div"><p>Forgot Password/Username?</p></div>
+
+        <div class="login-button-div">
+          <button>Log In</button>
+        </div>
+
+        <div class="login-notmember-div">
+          <p>
+            Not a member?
+            <span onclick="signUp()" id="signupnow">Signup now</span>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div class="view-summary-maincontainer hide">
+      <div onclick="exitSummary()" class="exit-button">
+        <i class="fa-solid fa-circle-xmark fa-xl"></i>
+      </div>
+
+      <div class="information-summary">
+        <p class="information-summary-p"></p>
+      </div>
+    </div>
+
+    <div class="success-create-acc hide">
+      <p>Account successfully created!</p>
+      <p>You may now use your account to log in</p>
+      <div class="login-now-button">
+        <button onclick="logInNow()">Log in now!</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ea3bfd0f41.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
