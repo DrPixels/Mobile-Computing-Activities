@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <!--For Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@300;600&family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="login-styles.css" />
     <link rel="stylesheet" href="view-summary.css" />
@@ -31,7 +39,12 @@
             </div>
           </div>
           <div class="upper-section-div">
-            <p><b>ACCOUNT LOG IN DETAILS</b></p>
+            <div class="signupform-mainsections-title">
+              <p>
+                <b>Account Log In Details</b>
+              </p>
+            </div>
+
             <div class="upper-section-subdiv">
               <div class="name-div">
                 <div class="input-div">
@@ -188,7 +201,9 @@
           </div>
 
           <div class="lower-section-div">
-            <p><b>PERSONAL DETAILS</b></p>
+            <div class="signupform-mainsections-title">
+              <p><b>Personal Basic Information</b></p>
+            </div>
 
             <div class="lower-section-subdiv">
               <div class="birthdate-div">
@@ -345,10 +360,12 @@
               </div>
               <br />
 
-              <p id="parent-par"><b>PARENTS DETAILS</b></p>
+              <div class="signupform-mainsections-title">
+                <p id="parent-par"><b>Parents Basic Information</b></p>
+              </div>
 
               <div class="parent-main-container">
-                <p><b>FATHER</b></p>
+                <p><b>Father</b></p>
                 <div class="name-div">
                   <div class="input-div">
                     <div>
@@ -427,7 +444,7 @@
 
                 <br />
 
-                <p><b>MOTHER</b></p>
+                <p><b>Mother</b></p>
                 <div class="name-div">
                   <div class="input-div">
                     <div>
@@ -514,15 +531,32 @@
           </div>
           <div>
             <p>
+              By checking this box, you confirm that you are
+              <u><b>18 years old and older</b></u
+              >.
+            </p>
+          </div>
+        </div>
+
+        <div class="term-condi">
+          <div>
+            <input required type="checkbox" />
+          </div>
+          <div>
+            <p>
               By creating your account, you confirm your acceptance of the
-              <u><b>Terms and Conditions.</b></u
+              <u><b>Terms and Conditions</b></u
               >.
             </p>
           </div>
         </div>
 
         <div class="create-div">
-          <button onclick="createAccount()" type="submit" class="create-button">
+          <button
+            onsubmit="createAccount()"
+            type="submit"
+            class="create-button"
+          >
             <div>
               <i class="fa-solid fa-user-plus fa-lg"></i>
             </div>
@@ -594,7 +628,7 @@
           </div>
         </div>
 
-        <div class="login-forgot-div"><p>Forgot Password/Username?</p></div>
+        <div class="login-forgot-div"><p>Forgot Username/Password?</p></div>
 
         <div class="login-button-div">
           <button>Log In</button>
@@ -610,20 +644,92 @@
     </div>
 
     <div class="view-summary-maincontainer hide">
-      <div onclick="exitSummary()" class="exit-button">
-        <i class="fa-solid fa-circle-xmark fa-xl"></i>
-      </div>
+      <div class="view-summary-subdiv">
+        <div onclick="exitSummary()" class="exit-button">
+          <i class="fa-solid fa-circle-xmark fa-xl"></i>
+        </div>
 
-      <div class="information-summary">
-        <p class="information-summary-p"></p>
-      </div>
-    </div>
+        <div class="information-summary">
+          <div class="summary-div-separator">
+            <div>Full Name</div>
+            <div class="full-name-summary content-summary-div"></div>
+          </div>
 
-    <div class="success-create-acc hide">
-      <p>Account successfully created!</p>
-      <p>You may now use your account to log in</p>
-      <div class="login-now-button">
-        <button onclick="logInNow()">Log in now!</button>
+          <div class="summary-div-separator">
+            <div>Username</div>
+            <div class="username-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Nickname</div>
+            <div class="nickname-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Email Address</div>
+            <div class="email-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Birthdate</div>
+            <div class="birthdate-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Age</div>
+            <div class="age-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Birthplace</div>
+            <div class="birthplace-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Gender</div>
+            <div class="gender-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Civil Status</div>
+            <div class="civil-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Phone Number</div>
+            <div class="phonenum-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Landline</div>
+            <div class="landline-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Address</div>
+            <div class="address-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Father's Full Name</div>
+            <div class="father-full-name-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Father's Occupation</div>
+            <div class="foccupation-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Mother's Full Name</div>
+            <div class="mother-full-name-summary content-summary-div"></div>
+          </div>
+
+          <div class="summary-div-separator">
+            <div>Mother's Occupation</div>
+            <div class="moccupation-summary content-summary-div"></div>
+          </div>
+        </div>
       </div>
     </div>
 
