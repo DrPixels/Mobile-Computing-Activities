@@ -1,0 +1,121 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title-login-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 0;
+  background-image: linear-gradient(to right, #141e30, #243b55);
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+
+  color: white;
+}
+
+.login-main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 30em;
+  height: 30em;
+  border: solid 1px;
+  border-radius: 5px;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-color: #243b55;
+
+  box-shadow: -11px 11px 23px #c2c2c2, 11px -11px 23px #ffffff;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em 4em;
+}
+
+.login-input {
+  width: 100%;
+}
+
+.input-div {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  column-gap: 1em;
+  border-bottom: solid 1px;
+  border-color: gray;
+  padding-bottom: 0.5em;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+}
+
+.input:focus {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.input {
+  width: 100%;
+}
+
+.login-email-div {
+  margin-bottom: 20px;
+}
+
+.login-forgot-div {
+  display: flex;
+  justify-content: right;
+  font-size: 0.8rem;
+  margin-bottom: 25px;
+  color: rgb(84, 84, 230);
+}
+
+.login-forgot-div p {
+  cursor: pointer;
+}
+
+.login-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.login-button-div button {
+  padding: 1em 5em;
+  border: none;
+  border-radius: 10px;
+  background-color: #3f2b96;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.login-button-div button:hover {
+  background-color: #6151a7;
+}
+
+.login-notmember-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-notmember-div span {
+  cursor: pointer;
+  color: rgb(84, 84, 230);
+}
+
+.login-notmember-div span:hover,
+.login-forgot-div p:hover {
+  text-decoration: underline;
+}

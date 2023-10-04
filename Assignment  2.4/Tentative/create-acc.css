@@ -1,0 +1,41 @@
+.success-create-acc {
+  position: absolute;
+  background-color: #313133;
+  color: white;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18em;
+  height: 10em;
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 3em;
+
+  line-height: 1.2rem;
+}
+
+.success-create-acc p {
+  text-align: center;
+}
+
+.login-now-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-create-acc button {
+  padding: 1em 3em;
+  border: none;
+  border-radius: 10px;
+  background-color: #3f2b96;
+  color: white;
+  cursor: pointer;
+  margin-top: 1em;
+  transition: all 0.15s;
+}
+
+.success-create-acc button:hover {
+  background-color: #6151a7;
+}
