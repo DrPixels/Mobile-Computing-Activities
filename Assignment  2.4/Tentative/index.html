@@ -3,15 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
-    <!--For Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@300;600&family=Poppins:wght@300&display=swap"
-      rel="stylesheet"
-    />
+    <title>Account Log In</title>
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="login-styles.css" />
@@ -22,7 +14,7 @@
   <body>
     <!--HTML Code for the Signup Form-->
     <div class="main-container hide">
-      <form>
+      <form class="signup-form-page">
         <div class="reg-title-div">
           <h2 class="reg-title">ACCOUNT REGISTRATION FORM</h2>
         </div>
@@ -532,7 +524,7 @@
           <div>
             <p>
               By checking this box, you confirm that you are
-              <u><b>18 years old and older</b></u
+              <u><b>18 years old or older</b></u
               >.
             </p>
           </div>
@@ -553,7 +545,7 @@
 
         <div class="create-div">
           <button
-            onsubmit="createAccount()"
+            onclick="createAcc(event)"
             type="submit"
             class="create-button"
           >
@@ -621,7 +613,7 @@
                 id="pass-login"
                 class="input"
                 required
-                type="text"
+                type="password"
                 placeholder="Password"
               />
             </div>
@@ -631,7 +623,7 @@
         <div class="login-forgot-div"><p>Forgot Username/Password?</p></div>
 
         <div class="login-button-div">
-          <button>Log In</button>
+          <button onclick="verifyLogin(event)" type="submit">Log In</button>
         </div>
 
         <div class="login-notmember-div">
@@ -730,6 +722,14 @@
             <div class="moccupation-summary content-summary-div"></div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="success-create-acc hide">
+      <p>Account successfully created.</p>
+      <p>You can now use your credentials to log in.</p>
+      <div class="login-now-button">
+        <button onclick="loginNow()" type="button">Log in now</button>
       </div>
     </div>
 
