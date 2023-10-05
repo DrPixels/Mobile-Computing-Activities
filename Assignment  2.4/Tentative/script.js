@@ -125,6 +125,7 @@ function verifyLogin(event) {
 
     if (!accountdetails.length) {
       alert("Incorrect Credentials. Please try again");
+      loginFormPage.reset();
       return;
     }
     for (let i = 0; i < accountdetails.length; i++) {
@@ -134,14 +135,18 @@ function verifyLogin(event) {
       ) {
         if (passLogin == accountdetails[i].password) {
           alert("Successful Log In. Thank you.");
+          loginFormPage.reset();
         } else {
           alert("Incorrect Password. Please try again.");
+          loginFormPage.reset();
         }
       } else if (
         emailuserLogin !== accountdetails[i].username &&
         emailuserLogin !== accountdetails[i].emailAddress
       ) {
         alert("Incorrect Credentials. Please try again");
+        loginFormPage.reset();
+
         return;
       }
     }
