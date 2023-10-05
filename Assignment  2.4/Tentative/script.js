@@ -1,5 +1,16 @@
 const createbutton = document.querySelector(".create-button");
 const ageError = document.querySelector(".age-error-div");
+const password = document.querySelector(".password");
+const confirmpassword = document.querySelector(".confirm-password");
+const username = document.querySelector("#username-input");
+const emailAddress = document.querySelector("#emailaddress-input");
+
+const phonenumber = document.querySelector(".phonenumber-input");
+const telephone = document.querySelector(".telephone-input");
+
+const accountdetails = [];
+
+const ageDisplay = document.querySelector(".input-age");
 
 //bday
 let age;
@@ -13,13 +24,9 @@ let maxMonth = new Date().getMonth() + 1;
 let maxBdayInput = `${maxYear}-${maxMonth.toString().padStart(2, "0")}-${maxDay
   .toString()
   .padStart(2, "0")}`;
-console.log(maxBdayInput);
-console.log(typeof maxBdayInput);
 bdayInput.max = maxBdayInput;
 
 // For Birthdate Min and Max
-
-const ageDisplay = document.querySelector(".input-age");
 
 function calculateAge() {
   birthDateInput = document.getElementById("birthdate-input").value;
@@ -27,7 +34,7 @@ function calculateAge() {
   let currentDate = new Date();
 
   // Calculate the difference in years
-  let age = currentDate.getFullYear() - bDay.getFullYear();
+  age = currentDate.getFullYear() - bDay.getFullYear();
 
   // Check if the current date's month and day are before the birthdate's month and day
   if (
@@ -38,27 +45,22 @@ function calculateAge() {
     age--;
   }
 
-  ageDisplay.value = `${age || ""}`;
+  ageDisplay.value = age || null;
 }
 
 //For the Login and Signup Popup
 const loginForm = document.querySelector(".login-main-container");
+const loginFormPage = document.querySelector(".login-form");
 const signupForm = document.querySelector(".main-container");
+const signupFormPage = document.querySelector(".signup-form-page");
 const viewSummaryContainer = document.querySelector(
   ".view-summary-maincontainer"
 );
 const successCreate = document.querySelector(".success-create-acc");
-// For Password Checking
-let status;
 
-function createAccount() {
-  const password = document.querySelector(".password");
-  const confirmpassword = document.querySelector(".confirm-password");
+const createAccButton = document.querySelector(".create-button");
 
-  //For Telephone
-  const phonenumber = document.querySelector(".phonenumber-input");
-  const telephone = document.querySelector(".telephone-input");
-
+function createAcc(event) {
   if (
     password.value !== confirmpassword.value &&
     password.value !== "" &&
@@ -71,15 +73,6 @@ function createAccount() {
   } else {
     confirmpassword.setCustomValidity("");
   }
-
-  if (age < 18) {
-    ageError.classList.remove("hide");
-    const ageErrorInterval = setTimeout(() => {
-      ageError.classList.add("hide");
-    }, 1000);
-    return;
-  }
-
   if (phonenumber.value == "" && telephone.value == "") {
     phonenumber.setCustomValidity("Enter at least one contact number.");
     telephone.setCustomValidity("Enter at least one contact number.");
@@ -89,21 +82,26 @@ function createAccount() {
     telephone.setCustomValidity("");
   }
 
-  if (age < 18) {
+  if (signupFormPage.checkValidity()) {
     event.preventDefault();
-    return;
+    accountdetails.push({
+      username: username.value,
+      emailAddress: emailAddress.value,
+      password: password.value,
+    });
+    signupFormPage.reset();
+    signupForm.classList.add("hide");
+    loginForm.classList.add("hide");
+    viewSummaryContainer.classList.add("hide");
+    successCreate.classList.remove("hide");
   }
-
-  signupForm.classList.add("hide");
-  loginForm.classList.add("hide");
-  viewSummaryContainer.classList.add("hide");
-  successCreate.classList.remove("hide");
 }
 
 function signUp() {
   loginForm.classList.add("hide");
   signupForm.classList.remove("hide");
   viewSummaryContainer.classList.add("hide");
+  document.title = "Account Sign In";
 }
 
 function logIn() {
@@ -112,8 +110,47 @@ function logIn() {
   viewSummaryContainer.classList.add("hide");
 }
 
+function loginNow() {
+  signupForm.classList.add("hide");
+  loginForm.classList.remove("hide");
+  viewSummaryContainer.classList.add("hide");
+  successCreate.classList.add("hide");
+}
+
+function verifyLogin(event) {
+  if (loginFormPage.checkValidity()) {
+    event.preventDefault();
+    const emailuserLogin = document.querySelector("#email-user-login").value;
+    const passLogin = document.querySelector("#pass-login").value;
+
+    if (!accountdetails.length) {
+      alert("Incorrect Credentials. Please try again");
+      return;
+    }
+    for (let i = 0; i < accountdetails.length; i++) {
+      if (
+        emailuserLogin == accountdetails[i].username ||
+        emailuserLogin == accountdetails[i].emailAddress
+      ) {
+        if (passLogin == accountdetails[i].password) {
+          alert("Successful Log In. Thank you.");
+        } else {
+          alert("Incorrect Password. Please try again.");
+        }
+      } else if (
+        emailuserLogin !== accountdetails[i].username &&
+        emailuserLogin !== accountdetails[i].emailAddress
+      ) {
+        alert("Incorrect Credentials. Please try again");
+        return;
+      }
+    }
+  }
+}
+
 //For View Summary
 function viewSummary() {
+  document.title = "Account Summary";
   // Document Query Selector of Each Input in Registration Form
 
   //For Full Name
@@ -130,7 +167,6 @@ function viewSummary() {
   }
 
   //For Username
-  const username = document.querySelector("#username-input").value;
   const usernameSummaryDiv = document.querySelector(".username-summary");
 
   //For nickname
@@ -138,7 +174,6 @@ function viewSummary() {
   const nicknameSummaryDiv = document.querySelector(".nickname-summary");
 
   //For Email
-  const emailAddress = document.querySelector("#emailaddress-input").value;
   const emailSummaryDiv = document.querySelector(".email-summary");
 
   //For Birthdate
@@ -187,7 +222,7 @@ function viewSummary() {
   if (!FfirstName || !FlastName || !FmiddleInitial) {
     Ffullname = "";
   } else {
-    Ffullname = `${FfirstName} ${FlastName}. ${FmiddleInitial}`;
+    Ffullname = `${FfirstName} ${FmiddleInitial}. ${FlastName}`;
   }
 
   const Foccupation = document.querySelector("#Foccupation").value;
@@ -215,9 +250,9 @@ function viewSummary() {
   viewSummaryContainer.classList.remove("hide");
 
   fullNameSummaryDiv.textContent = `${fullname || "N/A"}`;
-  usernameSummaryDiv.textContent = `${username || "N/A"}`;
+  usernameSummaryDiv.textContent = `${username.value || "N/A"}`;
   nicknameSummaryDiv.textContent = `${nickname || "N/A"}`;
-  emailSummaryDiv.textContent = `${emailAddress || "N/A"}`;
+  emailSummaryDiv.textContent = `${emailAddress.value || "N/A"}`;
   birthdateSummaryDiv.textContent = `${birthDateInput || "N/A"}`;
   ageSummaryDiv.textContent = `${agetemp || "N/A"}`;
   birthplaceSummaryDiv.textContent = `${birthplace || "N/A"}`;
@@ -233,6 +268,7 @@ function viewSummary() {
 }
 
 function exitSummary() {
+  document.title = "Account Sign In";
   loginForm.classList.add("hide");
   signupForm.classList.remove("hide");
   viewSummaryContainer.classList.add("hide");
