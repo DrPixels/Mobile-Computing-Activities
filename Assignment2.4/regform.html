@@ -1766,6 +1766,13 @@
         signupForm.classList.remove("hide");
         viewSummaryContainer.classList.add("hide");
       }
+
+      //For Reset Button
+      const resetButton = document.querySelector(".reset-button");
+      resetButton.addEventListener("click", () => {
+        age = undefined;
+        birthDateInput = undefined;
+      });
     </script>
     <script
       src="https://kit.fontawesome.com/ea3bfd0f41.js"
